@@ -6,7 +6,7 @@ page-welcome {
     height: 45%;
     z-index: 1;
     background-repeat: repeat-x;
-    animation: animatedBackground 40s linear infinite;
+    animation: animatedBackground 45s linear infinite;
   }
 
   @keyframes animatedBackground {
@@ -22,7 +22,7 @@ page-welcome {
   }
   .splash-logo {
     margin: auto;
-    background: url('../assets/img/appicon.png') repeat transparent;
+    background: url('../assets/img/travelerguide2 png.png') no-repeat transparent;
     background-size: 100%;
     width: 128px;
     height: 128px;
