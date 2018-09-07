@@ -7,48 +7,64 @@ export class Items {
   items: Item[] = [];
 
   defaultItem: any = {
-    "name": "Burt Bear",
-    "profilePic": "assets/img/speakers/bear.jpg",
-    "about": "Burt is a Bear.",
+     "name": "Official Visits",
+        "profilePic": "assets/img/speakers/9.jpg",
+        "about": "All your official requirments."
   };
 
 
   constructor() {
     let items = [
       {
-        "name": "Burt Bear",
-        "profilePic": "assets/img/speakers/bear.jpg",
-        "about": "Burt is a Bear."
+        "name": "Official Visits",
+        "profilePic": "assets/img/speakers/9.jpg",
+        "about": "All your official requirments."
       },
       {
-        "name": "Charlie Cheetah",
-        "profilePic": "assets/img/speakers/cheetah.jpg",
-        "about": "Charlie is a Cheetah."
+        "name": "Family Visits",
+        "profilePic": "assets/img/speakers/10.jpg",
+        "about": "Get enjoy with your family."
       },
       {
-        "name": "Donald Duck",
-        "profilePic": "assets/img/speakers/duck.jpg",
-        "about": "Donald is a Duck."
+        "name": "Visit For Hiking",
+        "profilePic": "assets/img/speakers/3.jpg",
+        "about": "Hiking never ends."
       },
       {
-        "name": "Eva Eagle",
-        "profilePic": "assets/img/speakers/eagle.jpg",
-        "about": "Eva is an Eagle."
+        "name": "Visit For Surfing",
+        "profilePic": "assets/img/speakers/8.jpg",
+        "about": "Surf your experience."
       },
       {
-        "name": "Ellie Elephant",
-        "profilePic": "assets/img/speakers/elephant.jpg",
-        "about": "Ellie is an Elephant."
+        "name": "Visit For Nature",
+        "profilePic": "assets/img/speakers/1.jpg",
+        "about": "Nature is to feel ."
       },
       {
-        "name": "Molly Mouse",
-        "profilePic": "assets/img/speakers/mouse.jpg",
-        "about": "Molly is a Mouse."
+        "name": "Visit For Culture",
+        "profilePic": "assets/img/speakers/2.jpg",
+        "about": "The herritage of Country."
       },
       {
-        "name": "Paul Puppy",
-        "profilePic": "assets/img/speakers/puppy.jpg",
-        "about": "Paul is a Puppy."
+        "name": "Beach Lovers",
+        "profilePic": "assets/img/speakers/4.jpg",
+        "about": "Grab your own spirit."
+      },
+      {
+        "name": "Educational Visits",
+        "profilePic": "assets/img/speakers/7.jpg",
+        "about": "Leran all you need."
+      },
+
+      {
+        "name": "For Honeymoon",
+        "profilePic": "assets/img/speakers/6.jpg",
+        "about": "Make awesome days."
+      },
+      {
+        "name": "Different Able Visitors",
+        "profilePic": "assets/img/speakers/5.jpg",
+        "about": "We are not limited."
       }
     ];
 

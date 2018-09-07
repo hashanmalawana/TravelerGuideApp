@@ -10,6 +10,13 @@ import { Items } from '../../providers';
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
+  Item: {
+    name: string,
+    about: string,
+    note: string
+  };
+
+
   currentItems: Item[];
 
   constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
