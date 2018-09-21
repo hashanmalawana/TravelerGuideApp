@@ -10,10 +10,11 @@ import { Items } from '../../providers';
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
-  Item: {
+  item: {
     name: string,
     about: string,
-    note: string
+    note: string,
+    profilePic: any
   };
 
 
