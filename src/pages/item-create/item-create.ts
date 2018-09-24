@@ -72,6 +72,9 @@ export class ItemCreatePage {
     this.viewCtrl.dismiss();
   }
 
+  createItem(){
+    alert("Thanks you made");
+  }
   /**
    * The user is done and wants to create the item, so return it
    * back to the presenter.
