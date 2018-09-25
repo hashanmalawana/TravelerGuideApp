@@ -8,7 +8,8 @@ export class Items {
   defaultItem: any = {
      "name": "Official Visits",
         "profilePic": "assets/img/speakers/9.jpg",
-        "about": "All your official requirments."
+        "about": "All your official requirments.",
+        "details": "Where your business models talk for you"
   };
 
 
@@ -17,53 +18,63 @@ export class Items {
       {
         "name": "Official Visits",
         "profilePic": "assets/img/speakers/9.jpg",
-        "about": "All your official requirments."
+        "about": "All your official requirments.",
+        "details": "Where your business models talk for you"
       },
       {
         "name": "Family Visits",
         "profilePic": "assets/img/speakers/10.jpg",
-        "about": "Get enjoy with your family."
+        "about": "Get enjoy with your family.",
+        "details": "Where your family find the happiness"
       },
       {
         "name": "Visit For Hiking",
         "profilePic": "assets/img/speakers/3.jpg",
-        "about": "Hiking never ends."
+        "about": "Hiking never ends.",
+        "details": "Where your soul experience the challenge "
       },
       {
         "name": "Visit For Surfing",
         "profilePic": "assets/img/speakers/8.jpg",
-        "about": "Surf your experience."
+        "about": "Surf your experience.",
+        "details": "Where your desires surf the life"
       },
       {
         "name": "Visit For Nature",
         "profilePic": "assets/img/speakers/1.jpg",
-        "about": "Nature is to feel ."
+        "about": "Nature is to feel .",
+        "details": "Where your happiness meets the nature"
       },
       {
         "name": "Visit For Culture",
         "profilePic": "assets/img/speakers/2.jpg",
-        "about": "The herritage of Country."
+        "about": "The herritage of Country.",
+        "details": "Where your time get herritaged"
       },
       {
         "name": "Beach Lovers",
         "profilePic": "assets/img/speakers/4.jpg",
-        "about": "Grab your own spirit."
+        "about": "Grab your own spirit.",
+        "details": "Where your loving one's get closed"
       },
       {
         "name": "Educational Visits",
         "profilePic": "assets/img/speakers/7.jpg",
-        "about": "Leran all you need."
+        "about": "Leran all you need.",
+        "details": "Where your learnings come to the peak"
       },
 
       {
         "name": "For Honeymoon",
         "profilePic": "assets/img/speakers/6.jpg",
-        "about": "Make awesome days."
+        "about": "Make awesome days.",
+        "details": "Where your life partner get closed"
       },
       {
         "name": "Different Able Visitors",
         "profilePic": "assets/img/speakers/5.jpg",
-        "about": "We are not limited."
+        "about": "We are not limited.",
+        "details": "Where your desires come true without limits"
       }
     ];
 
