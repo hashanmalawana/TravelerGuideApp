@@ -8,44 +8,11 @@
 
 
 <ion-content>
-  <ion-card *ngFor="let item of item">
 
-    <ion-item>
-      <ion-avatar item-start>
-        <img [src]="item.user.avatar">
-      </ion-avatar>
-      <h2>{{item.name}}</h2>
-      <p>{{item.date}}</p>
-      <p>{{item.about}}</p>
-      <h1>Hashan malawana</h1>
-    </ion-item>
-
-    <img [src]="item.image">
-
-    <ion-card-content>
-      <p>{{item.content}}</p>
-    </ion-card-content>
-
-    <ion-row>
-      <ion-col>
-        <button ion-button color="primary" clear small icon-start>
-            <ion-icon name='thumbs-up'></ion-icon>
-            12 Likes
-          </button>
-      </ion-col>
-      <ion-col>
-
-        <button ion-button color="primary" clear small icon-start>
-            <ion-icon name='text'></ion-icon>
-            4 Comments
-          </button>
-      </ion-col>
-      <ion-col center text-center>
-        <ion-note>
-          11h ago
-        </ion-note>
-      </ion-col>
-    </ion-row>
-  </ion-card>
-
-</ion-content>
+    <div class="item-detail" padding>
+        <h2>{{item.name}}</h2>
+        <h4>{{item.about}}</h4>
+        <p>{{item.details}}</p>
+        <h6>By Hashan Malawana</h6>
+      </div>
+            </ion-content>
