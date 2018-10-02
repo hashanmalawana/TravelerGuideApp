@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController, AlertController } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 import { User } from '../../providers';
 import { MainPage } from '../';
@@ -22,7 +23,7 @@ export class LoginPage {
   // Our translated text strings
   private loginErrorString: string;
 
-  constructor(public navCtrl: NavController,
+  constructor(public navCtrl: NavController,private alertCon: AlertController, private afAuth: AngularFireAuth,
     public user: User,
     public toastCtrl: ToastController,
     public translateService: TranslateService) {
@@ -32,8 +33,30 @@ export class LoginPage {
     })
   }
 
+  email: String;
+  password: String;
+
+  alert(title, message){
+    this.alertCon.create({
+      title: title,
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
+  }
+
+  openRegisterPage(){
+    this.afAuth.auth.signInWithEmailAndPassword(String(this.email), String(this.password))
+    .then(data=>{
+      this.navCtrl.push(MainPage);
+    })
+    .catch(error=>{
+      console.log('Error', error)
+    this.alert('ERROR!', 'password or Email is wrong');
+    });
+  }
+
   // Attempt to login in through our User service
-  doLogin() {
+   /*doLogin() {
     this.user.login(this.account).subscribe((resp) => {
       this.navCtrl.push(MainPage);
     }, (err) => {
@@ -46,5 +69,5 @@ export class LoginPage {
       });
       toast.present();
     });
-  }
+  }*/
 }

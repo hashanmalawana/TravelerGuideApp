@@ -8,10 +8,28 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+
+//import { SignupPage } from '../pages/signup/signup';
 
 import { Items } from '../mocks/providers/items';
 import { Settings, User, Api } from '../providers';
 import { MyApp } from './app.component';
+
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyB1FpRUOyg256NzWVx4_JTrHgkoIuihZe4",
+    authDomain: "tchat-cb08f.firebaseapp.com",
+    databaseURL: "https://tchat-cb08f.firebaseio.com",
+    projectId: "tchat-cb08f",
+    storageBucket: "tchat-cb08f.appspot.com",
+    messagingSenderId: "608535084211"
+  }
+};
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -36,7 +54,8 @@ export function provideSettings(storage: Storage) {
 
 @NgModule({
   declarations: [
-    MyApp
+   // SignupPage,
+    MyApp,
   ],
   imports: [
     BrowserModule,
@@ -49,11 +68,16 @@ export function provideSettings(storage: Storage) {
       }
     }),
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    IonicStorageModule.forRoot(),
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+   // SignupPage,
+    MyApp,
   ],
   providers: [
     Api,

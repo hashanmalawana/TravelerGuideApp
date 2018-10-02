@@ -6,43 +6,20 @@
 
 </ion-header>
 
-<h3>Cards page hashan</h3>
-<ion-content>
-
-  <ion-card *ngFor="let item of cardItems">
-
-    <ion-item>
-      <ion-avatar item-start>
-        <img [src]="item.user.avatar">
-      </ion-avatar>
-      <h2>{{item.user.name}}</h2>
-      <p>{{item.date}}</p>
-    </ion-item>
-
-    <img [src]="item.image">
-
-    <ion-card-content>
-      <p>{{item.content}}</p>
-    </ion-card-content>
-
-    <ion-row>
-      <ion-col>
-        <button ion-button color="primary" clear small icon-start>
-            <ion-icon name='thumbs-up'></ion-icon>
-            12 Likes wow
-          </button>
-      </ion-col>
-      <ion-col>
-        <button ion-button color="primary" clear small icon-start>
-            <ion-icon name='text'></ion-icon>
-            40 Comments
-          </button>
-      </ion-col>
-      <ion-col center text-center>
-        <ion-note>
-          11h ago
-        </ion-note>
-      </ion-col>
-    </ion-row>
-  </ion-card>
+<ion-content padding id="block">
+  <div class="messageWrap" *ngFor="let message of messageDisplay | async">
+    <div [class]="message.email != email ? 'innerMessage messageLeft' :'innerMessage messageRight'"> <!--get messages to right-->
+        <div class="username">{{message.email}}</div>
+        <div class="message">{{message.message}}</div>
+    </div>
+  </div>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div id="footer">
+    <div class="element"><ion-input type="text" [(ngModel)]='message'></ion-input></div>
+    <div class="element"><button ion-button (click)="sendMessage()"><ion-icon name="send"></ion-icon></button></div>
+  </div>
+  </ion-toolbar>
+</ion-footer>
