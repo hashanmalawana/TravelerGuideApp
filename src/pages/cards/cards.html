@@ -9,7 +9,6 @@
 <ion-content padding id="block">
   <div class="messageWrap" *ngFor="let message of messageDisplay | async">
     <div [class]="message.email != email ? 'innerMessage messageLeft' :'innerMessage messageRight'"> <!--get messages to right-->
-        <div class="username">{{message.email}}</div>
         <div class="message">{{message.message}}</div>
     </div>
   </div>

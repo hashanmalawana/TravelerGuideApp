@@ -10,13 +10,6 @@ import { Items } from '../../providers';
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
-  item: {
-    name: string,
-    about: string,
-    note: string,
-    profilePic: any
-  };
-
 
   currentItems: Item[];
 
