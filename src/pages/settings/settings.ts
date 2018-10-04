@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { AlertController } from 'ionic-angular';
 import { Settings } from '../../providers';
 
 /**
@@ -16,6 +16,8 @@ import { Settings } from '../../providers';
   templateUrl: 'settings.html'
 })
 export class SettingsPage {
+
+
   // Our local settings object
   options: any;
 
@@ -34,11 +36,21 @@ export class SettingsPage {
 
   subSettings: any = SettingsPage;
 
-  constructor(public navCtrl: NavController,
+  constructor(public navCtrl: NavController,public alertCtrl: AlertController,
     public settings: Settings,
     public formBuilder: FormBuilder,
     public navParams: NavParams,
     public translate: TranslateService) {
+  }
+
+
+  showAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'Traveler Guide',
+      subTitle: 'Your Intelligent Travel Guider',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
   _buildForm() {
