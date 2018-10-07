@@ -64,13 +64,14 @@ myInput
         {
           text: 'Cancel',
           handler: data => {
-            console.log('Cancel clicked');
+
           }
         },
         {
           text: 'Save',
           handler: data => {
-           this.btnclick()
+            console.log(data);
+            this.btnclick(data.myInput);
           }
         }
       ]
@@ -80,8 +81,8 @@ myInput
 
 
 
-  btnclick(){
-    this.fdb.list("/myItems/").push(this.myInput);
+  btnclick(item){
+    this.fdb.list("/myItems/").push(item);
   }
 
   showAlert() {
