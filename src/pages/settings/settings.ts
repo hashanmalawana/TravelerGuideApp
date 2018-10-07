@@ -1,3 +1,4 @@
+import { MapPage } from './../map/map';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
@@ -5,6 +6,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { Settings } from '../../providers';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { MainPage } from '../index';
 
 
 
@@ -47,6 +49,34 @@ myInput
   }
 
 
+  showPrompt(){
+
+    const prompt = this.alertCtrl.create({
+      title: 'Comments',
+      message: "Tell Us What Your Experience",
+      inputs: [
+        {
+          name: 'myInput',
+          placeholder: 'Type'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Save',
+          handler: data => {
+           this.btnclick()
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
 
 
 
@@ -62,6 +92,8 @@ myInput
     });
     alert.present();
   }
-
+  goMapPage(){
+    this.navCtrl.push(MapPage);
+  }
 
 }

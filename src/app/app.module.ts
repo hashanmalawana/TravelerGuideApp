@@ -18,6 +18,7 @@ import { Observable } from 'rxjs/Observable';
 import { Items } from '../mocks/providers/items';
 import { Settings, User, Api } from '../providers';
 import { MyApp } from './app.component';
+import { MapPage } from '../pages/map/map';
 
 export const environment = {
   production: false,
@@ -56,6 +57,7 @@ export function provideSettings(storage: Storage) {
   declarations: [
    // SignupPage,
     MyApp,
+    MapPage
   ],
   imports: [
     BrowserModule,
@@ -78,6 +80,7 @@ export function provideSettings(storage: Storage) {
   entryComponents: [
    // SignupPage,
     MyApp,
+    MapPage
   ],
   providers: [
     Api,

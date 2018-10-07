@@ -8,12 +8,15 @@
 
   <ion-content>
 
-        <ion-item>
-          <ion-input [(ngModel)]="myInput"></ion-input>
-        </ion-item>
-        <button ion-button color="primary" block (click)="btnclick()">Comment</button>
-          <ion-item>
+
+         <!-- <ion-input [(ngModel)]="myInput"></ion-input> -->
+
+        <button ion-button color="primary" block (click)="showPrompt()">Comment</button>
+
               <button ion-button color="primary" block (click)="showAlert()">App Details</button>
-          </ion-item>
+
+
+            <button ion-button color="primary" block (click)="goMapPage()">Your Map</button>
+
 
   </ion-content>
