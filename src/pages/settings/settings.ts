@@ -64,7 +64,7 @@ myInput
         {
           text: 'Cancel',
           handler: data => {
-
+          console.log(data);
           }
         },
         {
