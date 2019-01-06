@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { Storage } from '@ionic/storage';
+import { LoadingController } from 'ionic-angular';
 
 import { User } from '../../providers';
 import { MainPage } from '../';
@@ -23,14 +25,18 @@ export class LoginPage {
   // Our translated text strings
   private loginErrorString: string;
 
-  constructor(public navCtrl: NavController,private alertCon: AlertController, private afAuth: AngularFireAuth,
+  constructor(public loadingCtrl: LoadingController , public navCtrl: NavController,private alertCon: AlertController, private afAuth: AngularFireAuth,
     public user: User,
     public toastCtrl: ToastController,
-    public translateService: TranslateService) {
+    public translateService: TranslateService,
+    private storage: Storage) {
 
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;
     })
+
+
+
   }
 
   email: String;
@@ -45,13 +51,20 @@ export class LoginPage {
   }
 
   openRegisterPage(){
+
+    const loader = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    loader.present();
     this.afAuth.auth.signInWithEmailAndPassword(String(this.email), String(this.password))
     .then(data=>{
+      this.storage.set('email', this.email);
       this.navCtrl.push(MainPage);
     })
     .catch(error=>{
       console.log('Error', error)
-    this.alert('ERROR!', 'password or Email is wrong');
+    this.alert('ERROR!', 'Password or Email is wrong');
     });
   }
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -13,18 +14,25 @@ export class CardsPage {
   message: string;
   messageDisplay: Observable<any[]>;
 
-  constructor(private db: AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams) {
-    this.email = this.navParams.get('email');
-    this.messageDisplay = db.list('chat').valueChanges();     //Display Realtime messages
+  constructor(private db: AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+
+    this.messageDisplay = db.list('chat').valueChanges();
   }
 
   ionViewDidLoad() {
   }
 
   //set message data to NOSQL database
+
   sendMessage(){
-    this.db.list('chat').push({
-       message: this.message
-     });
+    this.storage.get('email')
+    .then((val) => {
+      this.email = val;
+      this.db.list('chat').push({
+        email: this.email,
+        message: this.message
+      });
+    });
+
   }
 }

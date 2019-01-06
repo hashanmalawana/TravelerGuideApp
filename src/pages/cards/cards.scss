@@ -1,16 +1,16 @@
 page-chat {
 
   #block{
-    background-color: #ceeeed;
+    background-color: #031414;
   }
 
-  .username {
+  .email {
     font-weight: bold;
     font-size: 80%;
   }
 
   .message{
-    font-size: 120%;
+    font-size: 100%;
   }
 
   .innerMessage.messageRight {
@@ -19,7 +19,7 @@ page-chat {
     padding: 5px 10px;
     margin: 5px;
     background: color($colors, 'primary');
-    color: white;
+    color: rgb(162, 18, 18);
     border-radius: 4px;
   }
 
@@ -29,7 +29,7 @@ page-chat {
     padding: 5px 10px;
     margin: 5px;
     background: color($colors, 'secondary');
-    color: white;
+    color: rgb(11, 4, 24);
     border-radius: 4px;
   }
 

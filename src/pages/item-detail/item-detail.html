@@ -14,16 +14,32 @@
         <h6>By Hashan Malawana</h6>
       </div>
       <ion-list>
-        <ion-item>
-          <ion-thumbnail item-start>
-            <img [src]="item.profilePic">
-          </ion-thumbnail>
+        <ion-item *ngFor="let items of item.places" >
 
-        <h2>{{item.name}}</h2>
-        <h4>{{item.about}}</h4>
-        <p>{{item.details}}</p>
+            <ion-card>
+                <img [src]="items.avatarImageUrl">
+                <ion-card-content>
+                  <ion-card-title>
+                      {{items.namep}}
+                    </ion-card-title>
+                  <p>
 
-          <button ion-button clear item-end>View</button>
+                      {{items.postText}}
+
+                    </p>
+                    <ion-item>
+                      <button (tap)="tapEvent($event)" ion-button clear item-start>{{tap}} Likes</button><ion-item>
+
+                        <ion-item>
+                          <button ion-button clear item-end color="primary" block (click)="comment()">Comment</button>
+                        </ion-item>
+                      </ion-item>
+
+
+                    </ion-item>
+                </ion-card-content>
+              </ion-card>
+
         </ion-item>
       </ion-list>
 

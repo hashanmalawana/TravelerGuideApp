@@ -1,5 +1,7 @@
 {
   "name": "TravelerGuide",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

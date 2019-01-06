@@ -6,9 +6,16 @@ page-item-detail {
     height: 250px;
   }
 
+  ion-card {
+    margin-bottom: 2em;
+  }
+
   .item-detail {
     width: 100%;
-    background: white;
+    background: rgb(40, 33, 150);
     position: absolute;
+  }
+  ion-col {
+    padding: 0.1;
   }
 }

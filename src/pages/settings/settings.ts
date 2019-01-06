@@ -1,3 +1,4 @@
+import { WelcomePage } from './../welcome/welcome';
 import { MapPage } from './../map/map';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -7,8 +8,6 @@ import { AlertController } from 'ionic-angular';
 import { Settings } from '../../providers';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { MainPage } from '../index';
-
-
 
 @IonicPage()
 @Component({
@@ -53,11 +52,11 @@ myInput
 
     const prompt = this.alertCtrl.create({
       title: 'Comments',
-      message: "Tell Us What Your Experience",
+      message: "Tell Us Your Experience",
       inputs: [
         {
           name: 'myInput',
-          placeholder: 'Type'
+          placeholder: 'Type here'
         },
       ],
       buttons: [
@@ -88,7 +87,7 @@ myInput
   showAlert() {
     const alert = this.alertCtrl.create({
       title: 'Traveler Guide',
-      subTitle: 'Your Intelligent Travel Guider',
+      subTitle: 'Your Intelligent Travel Guider. Make your own database and serve yourself and make your arround better.',
       buttons: ['OK']
     });
     alert.present();
@@ -96,5 +95,6 @@ myInput
   goMapPage(){
     this.navCtrl.push(MapPage);
   }
+
 
 }

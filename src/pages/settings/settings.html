@@ -10,13 +10,35 @@
 
 
          <!-- <ion-input [(ngModel)]="myInput"></ion-input> -->
+         <ion-item>
+            <ion-label>Notifications</ion-label>
+            <ion-toggle color="danger" checked="true"></ion-toggle>
+          </ion-item>
 
-        <button ion-button color="primary" block (click)="showPrompt()">Comment</button>
+        <ion-item>
+            <button ion-button color="primary" block (click)="showPrompt()">Comment</button>
+        </ion-item>
 
-              <button ion-button color="primary" block (click)="showAlert()">App Details</button>
+        <ion-item>
+            <button ion-button color="primary" block (click)="showAlert()">App Details</button>
+          </ion-item>
+
+          <ion-item>
+              <button ion-button color="primary" block (click)="goMapPage()">Your Map</button>
+            </ion-item>
 
 
-            <button ion-button color="primary" block (click)="goMapPage()">Your Map</button>
+                <!-- Real floating action button, fixed. It will not scroll with the content -->
 
+                <ion-fab left bottom>
+                  <button ion-fab color="light"><ion-icon name="arrow-dropright"></ion-icon></button>
+                  <ion-fab-list side="right">
+                    <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+                    <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+                    <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+                    <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+                  </ion-fab-list>
+                </ion-fab>
 
-  </ion-content>
+              </ion-content>
+

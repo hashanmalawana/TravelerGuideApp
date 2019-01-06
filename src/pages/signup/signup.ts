@@ -1,3 +1,4 @@
+import { WelcomePage } from './../welcome/welcome';
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
@@ -48,10 +49,11 @@ export class SignupPage {
     this.afAuth.auth.createUserWithEmailAndPassword(String(this.email), String(this.password))
     .then(data=> {
       this.alert('SUCCESS', 'You have created an account');
+      this.navCtrl.push(WelcomePage);
     })
     .catch(error=>{
       console.log('Error', error)
-      this.alert('ERROR', 'Fill all filds');
+      this.alert('ERROR', 'Fill All Filds');
     });
   }
 

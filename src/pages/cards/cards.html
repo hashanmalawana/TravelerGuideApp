@@ -1,17 +1,19 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ 'CARDS_TITLE' | translate }}</ion-title>
+    <ion-title>{{ 'Chatting' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding id="block">
-  <div class="messageWrap" *ngFor="let message of messageDisplay | async">
-    <div [class]="message.email != email ? 'innerMessage messageLeft' :'innerMessage messageRight'"> <!--get messages to right-->
-        <div class="message">{{message.message}}</div>
-    </div>
-  </div>
+    <div class="messageWrap" *ngFor="let message of messageDisplay | async">
+        <div [class]="message.email != email ? 'innerMessage messageLeft' :'innerMessage messageRight'"> <!--get messages to right-->
+            <div class="email">{{this.email}}</div>
+            <div class="message">{{this.message}}</div>
+        </div>
+      </div>
+
 </ion-content>
 
 <ion-footer>
@@ -22,3 +24,4 @@
   </div>
   </ion-toolbar>
 </ion-footer>
+
